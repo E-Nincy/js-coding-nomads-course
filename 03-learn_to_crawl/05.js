@@ -8,7 +8,7 @@
  *      6. One with the name of today's month.
  *      7. One with the number of today's year.
  *      8. One with your age.
- * 
+ *
  * Using the variables created, with both concatenation and interpolation use
  * console.log to output:
  *      1. A greeting to your friend
@@ -24,4 +24,26 @@
  * in which interpolation won't work, seeing as it's a relatively new method and
  * support for it is not everywhere.
  */
+
+let name = "Nincy";
+let greeting = "Good day to you";
+let friendName = "Simon";
+let familyMemberName = "Bob";
+let todaysDate = "20th";
+let todaysMonth = "October";
+let todaysYear = "2025";
+let myAge = "25";
+
+// 1. Greeting to friend
+console.log(`${greeting}, ${friendName}!`);
+
+// 2. Greeting to family member
+console.log(greeting + ", " + familyMemberName + "!");
+
+// 3. Greeting to friend with date and month
+console.log(`${greeting}, ${friendName}, today is the ${todaysDate} of ${todaysMonth}.`);
+
+// 4. Age in 20 years
+console.log(`In 20 years I will be ${parseInt(myAge) + 20} years old.`);
+
 
