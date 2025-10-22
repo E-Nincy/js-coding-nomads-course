@@ -22,12 +22,45 @@
 
 // Write your code here:
 
+// Conversions with Kelvin
 
+function KtoC(kelvin) {
+  return kelvin - 273.15;
+}
 
+function CtoK(celsius) {
+  return celsius + 273.15;
+}
 
+function FtoK(fahrenheit) {
+  return (fahrenheit - 32) * 5/9 + 273.15;
+}
 
+function KtoF(kelvin) {
+  return (kelvin - 273.15) * 9/5 + 32;
+}
 
+//  Pythagoras
+function pythagoras(a, b) {
+  return Math.sqrt((a ** 2) + (b ** 2));
+}
 
+// Conversions between imperial and metric units
+function inchToCm(inch) {
+  return inch * 2.54;
+}
+
+function CmToInch(cm) {
+  return cm / 2.54;
+}
+
+function MToKm(miles) {
+  return miles * 1.60934;
+}
+
+function KmToM(km) {
+  return km / 1.60934;
+}
 
 
 // Do not modify anything below this line
