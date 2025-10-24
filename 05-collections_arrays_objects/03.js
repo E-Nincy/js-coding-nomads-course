@@ -70,3 +70,40 @@ stores =  [
     [ '4003IN', 'Target', 'IN', 'North', 'Attica' ],
     [ '4003KY', 'Target', 'KY', 'North', 'Ashland' ]
 ]
+
+// 1. Cities of each store
+for (let store of stores) {
+  console.log(store[4]);
+}
+
+// 2. Store names in CA
+for (let store of stores) {
+  if (store[2] === "CA") {
+    console.log(store[1]);
+  }
+}
+
+// 3. Target store count
+let targetCount = 0;
+for (let store of stores) {
+  if (store[1] === "Target") {
+    targetCount++;
+  }
+}
+console.log(`There are ${targetCount} Target stores in total.`);
+
+// 4. Number of each type of store
+let storeCounts = {};
+
+for (let store of stores) {
+  let name = store[1];
+  if (storeCounts[name]) {
+    storeCounts[name]++;
+  } else {
+    storeCounts[name] = 1;
+  }
+}
+
+for (let name in storeCounts) {
+  console.log(`There are ${storeCounts[name]} ${name}s in total.`);
+}
