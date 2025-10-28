@@ -938,3 +938,60 @@ let expenses = [
     "Bank of America - Credit Card",
   ],
 ];
+
+// Delete the first array
+expenses.shift();
+
+// 1. Output the total amount of expenses for 2017 and 2018.
+let totalExpenses = 0;
+expenses.forEach(row => {
+  const date = new Date(row[0]);
+  const year = date.getFullYear();
+  const amount = row[3];
+  if ((year === 2017 || year === 2018) && amount < 0) {
+    totalExpenses += amount;
+  }
+});
+
+console.log("Total expenses for 2017 and 2018:", totalExpenses.toFixed(2));
+
+// 2. Output the total amount paid for Groceries.
+let totalGroceries = 0;
+expenses.forEach(row => {
+  if (row[2] === "Groceries") totalGroceries += row[3];
+});
+
+console.log("Total amount paid for Groceries:", totalGroceries.toFixed(2));
+
+// 3. Output the total difference in each account after all transactions.
+let accountChanges = {};
+expenses.forEach(row => {
+  const account = row[4];
+  const amount = row[3];
+  if (!accountChanges[account]) {
+    accountChanges[account] = 0;
+  }
+  accountChanges[account] += amount;
+});
+
+console.log("Total difference in each account after all transactions:", accountChanges);
+
+// 4. Create a new array where each row only has the "date", "description", and "amount"
+let eatingOut = [];
+expenses.forEach(row => {
+  if (row[2] === "Eating Out") {
+    eatingOut.push([row[0], row[1], row[3]]);
+  }
+});
+
+console.log("Eating Out transactions:", eatingOut);
+
+// 5. Create another array where each row only has the "date", "description", and "amount"
+let gearAndClothing = [];
+expenses.forEach(row => {
+  if (row[2] === "Gear and Clothing") {
+    gearAndClothing.push([row[0], row[1], row[3]]);
+  }
+});
+
+console.log("Gear and Clothing transactions:", gearAndClothing);
