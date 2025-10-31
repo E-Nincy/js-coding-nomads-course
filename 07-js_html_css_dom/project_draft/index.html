@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Portfolio</title>
+  <title>Nincy's Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,33 +14,63 @@
     <main>
         <section class="main-content">
             <h2>About Me</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Hi I'm Nincy. <br>
+                I'm a student passionate about web development, design, and technology. I enjoy learning JavaScript, Python, Django, Flask and building clean, modern websites.</p>
 
-        <h2>Projects</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim diam quis enim lobortis scelerisque fermentum.</p>
+            <h2>Projects</h2>
+            <ul class="projects">
+            <li><strong><a href="https://github.com/E-Nincy/InstagramClone" target="_blank">InstagramClone</a></strong> — A sleek Flask-based social media app. Users can post, like, comment, follow others, and manage everything via an admin dashboard. Clean, simple, and fully functional.</li>
+            <li><strong><a href="https://github.com/E-Nincy/polls_app" target="_blank">polls_app</a></strong> — A Django-based web app that lets users create and vote on polls. Built to practice backend logic, templates, and form handling.</li>
+            <li><strong><a href="https://github.com/E-Nincy/django_blog" target="_blank">django_blog</a></strong> — A personal blogging platform made with Django. Where you can share your daily thoughts.</li>
+            <li><strong><a href="https://github.com/E-Nincy/capstone-recipe-project" target="_blank">capstone-recipe-project</a></strong> — A recipe management app where users can browse recipes. Built as a capstone project integrating Python and database design.</li>
+            <li><strong><a href="https://github.com/E-Nincy/dungeon-adventure-cli" target="_blank">dungeon-adventure-cli</a></strong> — A text-based Python adventure game for the terminal. Explore rooms, fight monsters, and collect treasures in a fun CLI experience.</li>
+            </ul>
         </section>
 
         <aside class="sidebar">
             <h3>Contact Info</h3>
-            <p>Email: lorem@ipsum.com</p>
-            <p>Phone: +123 456 7890</p>
-            <p>Social Media: @loremipsum</p>
-            <p>Address: 123 Ipsum St, Dolor City</p>
+            <p>Email: escotonincy10@outlook.es</p>
+            <p>GitHub: https://github.com/E-Nincy </p>
+            <p>Address: Spain</p>
         </aside>
     </main>
 
-    <button id="mainBtn">Dark mode</button>
+    <!-- Buttonss -->
+    <div class="controls">
+        <button id="mainBtn">Dark mode</button>
+        <button id="increase">+</button>
+        <button id="decrease">−</button>
+    </div>
 
     <footer>
-        <p>&copy; 2025 My Portfolio</p>
+        <p>&copy; 2025 Nincy's Portfolio</p>
     </footer>
 
     <script>
+        // Dark mode btn
         const btn = document.getElementById('mainBtn');
         btn.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
-            btn.textContent = document.body.classList.contains('dark-mode') ? 'Light mode' : 'Dark mode';
-            console.log("The button was clicked!")
+            btn.textContent = document.body.classList.contains('dark-mode')
+                ? 'Light mode'
+                : 'Dark mode';
+        });
+
+        // Text size controls
+        const increaseBtn = document.getElementById('increase');
+        const decreaseBtn = document.getElementById('decrease');
+        let currentSize = 16;
+
+        increaseBtn.addEventListener('click', () => {
+            currentSize += 1;
+            document.documentElement.style.fontSize = `${currentSize}px`;
+        });
+
+        decreaseBtn.addEventListener('click', () => {
+            if (currentSize > 10) {
+                currentSize -= 1;
+                document.documentElement.style.fontSize = `${currentSize}px`;
+            }
         });
     </script>
 </body>
